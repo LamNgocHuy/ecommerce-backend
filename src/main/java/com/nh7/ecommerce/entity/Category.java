@@ -1,6 +1,7 @@
 package com.nh7.ecommerce.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -11,7 +12,7 @@ public class Category extends BaseEntity {
     @Column(name = "category_thumbnail")
     private String categoryThumbnail;
     @OneToMany(mappedBy = "category")
-    private List<Product> productList;
+    private List<Product> productList=new ArrayList<>();
 
     public String getCategoryName() {
         return categoryName;
