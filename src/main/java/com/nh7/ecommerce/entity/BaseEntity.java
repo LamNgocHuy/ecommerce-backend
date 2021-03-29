@@ -17,7 +17,7 @@ public abstract class BaseEntity {
     @Column
     private Date updateDate;
     @Column
-    private boolean isDeleted;
+    private Boolean isDeleted;
 
     public Long getId() {
         return id;
@@ -59,11 +59,11 @@ public abstract class BaseEntity {
         this.updateDate = updateDate;
     }
 
-    public boolean isDeleted() {
+    public Boolean isDeleted() {
         return isDeleted;
     }
 
-    public void setDeleted(boolean deleted) {
+    public void setDeleted(Boolean deleted) {
         isDeleted = deleted;
     }
 }
