@@ -11,7 +11,7 @@ public class Product extends BaseEntity{
     private int quantity;
     @OneToMany(mappedBy = "product")
     private List<Order> orderList;
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
     @OneToOne(mappedBy = "product")
