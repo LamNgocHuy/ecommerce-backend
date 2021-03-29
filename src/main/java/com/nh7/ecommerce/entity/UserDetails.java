@@ -5,11 +5,17 @@ import javax.persistence.*;
 @Entity
 @Table(name="userdetails")
 public class UserDetails extends BaseEntity{
+    @Column
     private String gmail;
+    @Column
     private char[] phoneNumber;
+    @Column
     private String address;
+    @Column
     private String fullName;
+    @Column
     private String dayOfBird;
+    @Column
     private String gender;
     @OneToOne(mappedBy = "user")
     private User user;
