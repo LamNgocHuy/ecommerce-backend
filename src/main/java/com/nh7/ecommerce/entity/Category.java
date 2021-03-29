@@ -7,6 +7,8 @@ import javax.persistence.*;
 public class Category extends BaseEntity{
     @Column(name = "category_name")
     private String categoryName;
+    @Column(name = "category_thumbnail")
+    private String categoryThumbnail;
     @OneToOne(mappedBy = "category")
     private Product product;
 
