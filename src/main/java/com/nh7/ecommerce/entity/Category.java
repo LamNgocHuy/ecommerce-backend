@@ -1,14 +1,17 @@
 package com.nh7.ecommerce.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "category")
-public class Category extends BaseEntity{
+public class Category extends BaseEntity {
     @Column(name = "category_name")
     private String categoryName;
-    @OneToOne(mappedBy = "category")
-    private Product product;
+    @Column(name = "category_thumbnail")
+    private String categoryThumbnail;
+    @OneToMany(mappedBy = "category")
+    private List<Product> productList;
 
     public String getCategoryName() {
         return categoryName;
@@ -18,11 +21,19 @@ public class Category extends BaseEntity{
         this.categoryName = categoryName;
     }
 
-    public Product getProduct() {
-        return product;
+    public String getCategoryThumbnail() {
+        return categoryThumbnail;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setCategoryThumbnail(String categoryThumbnail) {
+        this.categoryThumbnail = categoryThumbnail;
+    }
+
+    public List<Product> getProductList() {
+        return productList;
+    }
+
+    public void setProductList(List<Product> productList) {
+        this.productList = productList;
     }
 }
