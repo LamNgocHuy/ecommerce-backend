@@ -3,7 +3,7 @@ package com.nh7.ecommerce.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name="userdetails")
+@Table(name="user_details")
 public class UserDetails extends BaseEntity{
     @Column
     private String gmail;
@@ -17,7 +17,7 @@ public class UserDetails extends BaseEntity{
     private String dayOfBird;
     @Column
     private String gender;
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "userDetails")
     private User user;
 
     public String getGmail() {
