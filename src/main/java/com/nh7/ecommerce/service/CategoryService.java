@@ -9,7 +9,7 @@ import java.util.List;
 public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
-    public List<Category> findAll(){
+    List<Category> findAll(){
         return (List<Category>) categoryRepository.findAll();
     }
 }

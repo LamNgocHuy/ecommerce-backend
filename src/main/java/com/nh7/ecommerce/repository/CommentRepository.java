@@ -1,10 +1,10 @@
 package com.nh7.ecommerce.repository;
 
-import com.nh7.ecommerce.entity.Category;
+import com.nh7.ecommerce.entity.Comment;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CategoryRepository extends CrudRepository<Category,Long> {
-    Category findById(int id);
+public interface CommentRepository extends CrudRepository<Comment, Integer> {
+    Comment findById(int id);
 }
