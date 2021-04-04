@@ -30,8 +30,11 @@ public class Home {
     public List<Product> getProductsByCategoryName(@PathVariable(value="category_name")String categoryName){
         return productService.getProductByCategoryName(categoryName);
     }
-    @PostMapping("/category")
-    public Object addNewCategory(@RequestBody Category category){
+    @GetMapping("/category/addnew")
+    public Object addNewCategory(){
+        Category category = new Category();
+        category.setCategoryName("duoc luon");
+        category.setCategoryThumbnail("ok chua");
         categoryService.saveCategory(category);
         return category;
     }
