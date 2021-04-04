@@ -5,10 +5,7 @@ import com.nh7.ecommerce.entity.Product;
 import com.nh7.ecommerce.service.CategoryService;
 import com.nh7.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -32,5 +29,10 @@ public class Home {
     @GetMapping("/product/{category_name}")
     public List<Product> getProductsByCategoryName(@PathVariable(value="category_name")String categoryName){
         return productService.getProductByCategoryName(categoryName);
+    }
+    @PostMapping("/category")
+    public Object addNewCategory(@RequestBody Category category){
+        categoryService.saveCategory(category);
+        return category;
     }
 }

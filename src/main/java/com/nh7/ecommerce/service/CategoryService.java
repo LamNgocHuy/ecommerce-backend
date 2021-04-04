@@ -13,4 +13,12 @@ public class CategoryService {
         return (List<Category>) categoryRepository.findAll();
     }
     public List<Category> findByName(String var){return categoryRepository.findByCategoryName(var);}
+    public boolean saveCategory(Category category){
+        try {
+            categoryRepository.save(category);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
