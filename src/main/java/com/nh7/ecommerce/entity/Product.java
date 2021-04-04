@@ -9,7 +9,7 @@ public class Product extends BaseEntity{
 
     @Column(name = "quantity")
     private int quantity;
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
     private List<Order> orderList;
     @ManyToOne
     @JoinColumn(name = "category_id")

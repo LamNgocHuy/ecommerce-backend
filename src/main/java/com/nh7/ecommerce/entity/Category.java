@@ -11,7 +11,7 @@ public class Category extends BaseEntity {
     private String categoryName;
     @Column(name = "category_thumbnail")
     private String categoryThumbnail;
-    @OneToMany(mappedBy = "category")
+    @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
     private List<Product> productList=new ArrayList<>();
 
     public String getCategoryName() {
