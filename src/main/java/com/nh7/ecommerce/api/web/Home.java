@@ -16,19 +16,19 @@ public class Home {
     private CategoryService categoryService;
     @Autowired
     private ProductService productService;
-    @GetMapping("/category")
-    public Iterable<Category> getCategories(){
+    @RequestMapping(value = "/category", method = RequestMethod.GET)
+    public Object getCategories(){
         return categoryService.findAll();
     }
-    @GetMapping("/category/{name}")
-    public List<Category> getCategoriesByName(@PathVariable(value="name")String name){
+    @RequestMapping(value = "/category/{name}", method = RequestMethod.GET)
+    public Object getCategoriesByName(@PathVariable(value="name")String name){
         return categoryService.findByName(name);
     }
-    @GetMapping("/product/{category_name}")
+    @RequestMapping(value = "/product/{category_name}", method = RequestMethod.GET)
     public List<Product> getProductsByCategoryName(@PathVariable(value="category_name")String categoryName){
         return productService.getProductByCategoryName(categoryName);
     }
-    @PostMapping("/category")
+    @RequestMapping(value = "/category", method = RequestMethod.POST)
     public Object addNewCategory(@RequestBody Category category){
         categoryService.saveCategory(category);
         return category;
