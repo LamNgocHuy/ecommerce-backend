@@ -9,8 +9,8 @@ import java.util.List;
 public class CategoryService {
     @Autowired
     private CategoryRepository categoryRepository;
-    public List<Category> findAll(){
-        return (List<Category>) categoryRepository.findAll();
+    public Iterable<Category> findAll(){
+        return categoryRepository.findAll();
     }
     public List<Category> findByName(String var){return categoryRepository.findByCategoryName(var);}
     public boolean saveCategory(Category category){

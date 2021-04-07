@@ -7,9 +7,7 @@ import com.nh7.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("/home/api")
@@ -19,7 +17,7 @@ public class Home {
     @Autowired
     private ProductService productService;
     @GetMapping("/category")
-    public List<Category> getCategories(){
+    public Iterable<Category> getCategories(){
         return categoryService.findAll();
     }
     @GetMapping("/category/{name}")
