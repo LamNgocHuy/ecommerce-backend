@@ -22,5 +22,4 @@ public class CategoryService {
             return false;
         }
     }
-    public Category getCategoryById(int id){return categoryRepository.findById(id);}
 }
