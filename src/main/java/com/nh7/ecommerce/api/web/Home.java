@@ -19,7 +19,7 @@ public class Home {
     private ProductService productService;
     @RequestMapping(value = "/category", method = RequestMethod.GET)
     public Object getCategories(){
-        return categoryService.findAll();
+        return this.categoryService.findAll();
     }
     @RequestMapping(value = "/category/{name}", method = RequestMethod.GET)
     public Object getCategoriesByName(@PathVariable(value="name")String name){
