@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-@SpringBootApplication
+
 @RestController
 @RequestMapping("/home/api")
 public class Home {
