@@ -5,10 +5,11 @@ import com.nh7.ecommerce.entity.Product;
 import com.nh7.ecommerce.service.CategoryService;
 import com.nh7.ecommerce.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-
+@SpringBootApplication
 @RestController
 @RequestMapping("/home/api")
 public class Home {
