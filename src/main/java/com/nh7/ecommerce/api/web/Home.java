@@ -26,6 +26,10 @@ public class Home {
     public List<Category> getCategoriesByName(@PathVariable(value="name")String name){
         return categoryService.findByName(name);
     }
+    @GetMapping("/category/{id}")
+    public Object getCategoryById(@PathVariable(value = "id") int id){
+        return categoryService.getCategoryById(id);
+    }
     @GetMapping("/product/{category_name}")
     public List<Product> getProductsByCategoryName(@PathVariable(value="category_name")String categoryName){
         return productService.getProductByCategoryName(categoryName);
