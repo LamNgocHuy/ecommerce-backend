@@ -1,10 +1,8 @@
 package com.example.demo.repository;
 
 import com.example.demo.entity.TodoDetails;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-@Repository
-public interface TodoDetailsRepository extends CrudRepository<TodoDetails,Integer> {
+public interface TodoDetailsRepository extends JpaRepository<TodoDetails,Integer> {
     TodoDetails findById(int id);
 }
