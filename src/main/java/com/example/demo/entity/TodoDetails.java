@@ -48,4 +48,14 @@ public class TodoDetails {
     public void setTodos(Todos todos) {
         this.todos = todos;
     }
+
+    public TodoDetails() {
+    }
+
+    public TodoDetails(int id, String decription, String dueTime, Todos todos) {
+        this.id = id;
+        this.decription = decription;
+        this.dueTime = dueTime;
+        this.todos = todos;
+    }
 }

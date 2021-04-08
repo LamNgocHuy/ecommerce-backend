@@ -13,6 +13,8 @@ public class Todos {
     private String title;
     @Column(name = "date")
     private String date;
+    @OneToOne(mappedBy = "todos", fetch = FetchType.LAZY)
+    private TodoDetails todoDetails;
 
     public int getId() {
         return id;
@@ -46,6 +48,13 @@ public class Todos {
         this.todoDetails = todoDetails;
     }
 
-    @OneToOne(mappedBy = "todos")
-    private TodoDetails todoDetails;
+    public Todos(int id, String title, String date, TodoDetails todoDetails) {
+        this.id = id;
+        this.title = title;
+        this.date = date;
+        this.todoDetails = todoDetails;
+    }
+
+    public Todos() {
+    }
 }
