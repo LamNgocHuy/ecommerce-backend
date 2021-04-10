@@ -17,4 +17,9 @@ public class Product {
     @Getter
     @Setter
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    @Getter
+    @Setter
+    private Category category;
 }
