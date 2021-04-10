@@ -29,8 +29,8 @@ public class HomeAPI {
         return productService.getAll();
     }
     @PostMapping("/product")
-    public Object createProduct(@RequestBody Category category){
-        categoryService.saveCategory(category);
-        return category;
+    public Object createProduct(@RequestBody Product product){
+        productService.saveProduct(product);
+        return product;
     }
 }
